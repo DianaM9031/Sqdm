@@ -63,7 +63,9 @@ public class ComicDetailsFragment extends Fragment {
             public void onChanged(@Nullable Comic comic) {
                 //fragmentComicDetailsBinding.setComic(comic);
                 comic_name.setText(comic.getName());
-                comic_description.setText(Html.fromHtml(comic.getDescription()));
+                if(comic.getDescription() != null){
+                    comic_description.setText(Html.fromHtml(comic.getDescription()));
+                }
                 Glide.with(view.getContext())
                         .load(comic.getImage().getIcon_url())
                         .into(comic_image);
