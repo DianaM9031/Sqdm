@@ -40,14 +40,6 @@ public class ComicListViewModel extends AndroidViewModel {
         comicRepository.deleteAllComics();
     }
 
-
-    /*public void init(){
-        if(heroList != null){
-            return;
-        }
-
-    }*/
-
     //we will call this method to get the data
     public LiveData<List<Comic>> getComics() {
         return heroList;

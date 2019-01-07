@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,7 +63,7 @@ public class ComicDetailsFragment extends Fragment {
             public void onChanged(@Nullable Comic comic) {
                 //fragmentComicDetailsBinding.setComic(comic);
                 comic_name.setText(comic.getName());
-                comic_description.setText(comic.getDescription());
+                comic_description.setText(Html.fromHtml(comic.getDescription()));
                 Glide.with(view.getContext())
                         .load(comic.getImage().getIcon_url())
                         .into(comic_image);

@@ -71,10 +71,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 return true;
             case R.id.perfil:
                 UserFragment fragment = new UserFragment(user);
-
-                /*FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();*/
-
                 getSupportFragmentManager().beginTransaction()
                         .addToBackStack(ComicListFragment.TAG)
                         .replace(R.id.fragment_container, fragment, UserFragment.TAG).commit();

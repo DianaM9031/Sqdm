@@ -49,20 +49,6 @@ public class UserFragment extends Fragment {
         email.setText(user.getEmail());
         Glide.with(view.getContext()).load(user.getImage()).into(profileImage);
 
-
-        /*model.init(userID);
-
-        model.getUser().observe(this, new Observer<User>() {
-            @Override
-            public void onChanged(@Nullable User user) {
-                //fragmentComicDetailsBinding.setComic(comic);
-                name.setText(user.getName());
-                email.setText(user.getEmail());
-                Glide.with(view.getContext()).load(user.getImage()).into(profileImage);
-            }
-        });*/
-
-
         return view;
     }
 

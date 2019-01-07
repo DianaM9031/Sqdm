@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- <layout xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
-        <import type="android.text.Html"/>
+        <import type="android.example.dianamoron.sqdm.view.util.StringUtil"/>
         <variable
             name="comic"
             type="com.example.dianamoron.sqdm.service.model.Comic"/>
@@ -41,7 +41,7 @@
                 android:layout_margin="@dimen/text_margin"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 />
-            <!-- android:text="@{comic.description}" -->
+            <!-- android:text="@{StringUtil.fromHtml(comic.description)}" -->
 
         </LinearLayout>
 

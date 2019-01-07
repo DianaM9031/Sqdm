@@ -42,7 +42,6 @@ public class ComicRepository {
     private ComicDao comicDao;
 
     public ComicRepository(Context context){
-        Log.e(TAG,"ENTRO EN COMIC REPOSITORY");
         ComicDatabase comicDatabase = ComicDatabase.getInstance(context);
         comicDao = comicDatabase.comicDao();
     }
@@ -118,36 +117,6 @@ public class ComicRepository {
         }
     }
 
-   /* public MutableLiveData<List<Comic>> getComics(){
-        getInstance();
-        comicsList = new MutableLiveData<>();
-
-        Call<ComicResponse> comicResponseCall = instance.getComicList(ComicApiService.API_KEY,"json");
-
-        comicResponseCall.enqueue(new Callback<ComicResponse>() {
-            @Override
-            public void onResponse(Call<ComicResponse> call, Response<ComicResponse> response) {
-                if(response.isSuccessful()){
-                    deleteAllComics();
-                    insertAll(response.body().getResults());
-                    //comicsList.setValue(response.body().getResults());
-                    //Log.e(TAG,"ESTO ES HEROLIST "+comicsList.getValue().get(0).getName());
-
-                } else {
-                    Log.e(TAG,"RESPUESTA DEL API "+response.errorBody());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ComicResponse> call, Throwable t) {
-                Log.e(TAG,"Error "+t.getMessage());
-            }
-        });
-
-        return comicsList;
-
-    }*/
-
     public void insertComics(){
         getInstance();
         comicsList = new MutableLiveData<>();
@@ -162,7 +131,7 @@ public class ComicRepository {
                     Comic[]comics = response.body().getResults().toArray(new Comic[response.body().getResults().size()]);
                     insertAll(comics);
                 } else {
-                    Log.e(TAG,"RESPUESTA DEL API "+response.errorBody());
+                    Log.e(TAG,"Error insert comics "+response.errorBody());
                 }
             }
 
@@ -176,30 +145,5 @@ public class ComicRepository {
 
     }
 
-    /*public LiveData<Comic> getComicDetails(int comicID) {
-        getInstance();
-        comicDetails = new LiveData<>();
-
-        Call<ComicResponse> comicResponseCall = instance.getComicDetails(ComicApiService.API_KEY,"json","id:"+comicID);
-
-        comicResponseCall.enqueue(new Callback<ComicResponse>() {
-            @Override
-            public void onResponse(Call<ComicResponse> call, Response<ComicResponse> response) {
-                if(response.isSuccessful()){
-                    comicDetails.setValue(response.body().getResults().get(0));
-                } else {
-                    Log.e(TAG,"RESPUESTA DEL API "+response.errorBody());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ComicResponse> call, Throwable t) {
-                Log.e(TAG,"Error "+t.getMessage());
-            }
-        });
-
-        return comicDetails;
-
-    }*/
 
 }

@@ -28,34 +28,4 @@ public class ComicResponse {
         this.results = results;
     }
 
-
-
-    /*public MutableLiveData<ComicResponse> getComics(){
-        final MutableLiveData<ComicResponse> comicsList = new MutableLiveData<>();
-
-        Call<ComicResponse> comicResponseCall = ComicRepository.getInstance().getComicList(ComicApiService.API_KEY,"json");
-
-        comicResponseCall.enqueue(new Callback<ComicResponse>() {
-            @Override
-            public void onResponse(Call<ComicResponse> call, Response<ComicResponse> response) {
-                if(response.isSuccessful()){
-
-                    comicsList.setValue(response.body());
-
-                } else {
-                    Log.e(TAG,"RESPUESTA DEL API "+response.errorBody());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ComicResponse> call, Throwable t) {
-                Log.e(TAG,"Error "+t.getMessage());
-            }
-        });
-
-        return comicsList;
-
-    }*/
-
-
 }

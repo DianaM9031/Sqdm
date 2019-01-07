@@ -1,15 +1,10 @@
 package com.example.dianamoron.sqdm.service.model;
 
 import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.Ignore;
+
 import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.TypeConverters;
-import android.content.Context;
-import android.databinding.BindingAdapter;
-import android.os.Parcelable;
-import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.example.dianamoron.sqdm.service.database.Converters;
 
 @Entity(tableName = "comic_table")
